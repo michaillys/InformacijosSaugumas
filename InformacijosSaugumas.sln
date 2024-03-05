@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InformacijosSaugumas", "InformacijosSaugumas\InformacijosSaugumas.csproj", "{EF51E9B5-B7EA-4EA7-8365-AA77B4650B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InformacijosSaugumas", "InformacijosSaugumas\InformacijosSaugumas.csproj", "{EF51E9B5-B7EA-4EA7-8365-AA77B4650B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktinis2", "Praktinis2\Praktinis2.csproj", "{72474D38-A0A5-4831-85C9-49829B1DF458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EF51E9B5-B7EA-4EA7-8365-AA77B4650B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF51E9B5-B7EA-4EA7-8365-AA77B4650B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF51E9B5-B7EA-4EA7-8365-AA77B4650B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72474D38-A0A5-4831-85C9-49829B1DF458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72474D38-A0A5-4831-85C9-49829B1DF458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72474D38-A0A5-4831-85C9-49829B1DF458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72474D38-A0A5-4831-85C9-49829B1DF458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
