@@ -37,19 +37,24 @@
         <Button Content="Encrypt" Click="Encrypt_Click" Grid.Row="3" Grid.Column="1" Margin="5"/>
 
         <Label Content="Encrypted Message:" Grid.Row="4" Grid.Column="0" Margin="0,5"/>
-        <TextBox x:Name="txtEncryptedMessage" Grid.Row="4" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtEncryptedMessage_TextChanged"/>
+        <TextBox x:Name="txtEncryptedMessage" Grid.Row="4" Grid.Column="1" Margin="5" Width="100"  TextChanged="txtEncryptedMessage_TextChanged"/>
 
         <Label Content="Private Key (decrypt)" Grid.Row="5" Grid.Column="0" Margin="0,5"/>
-        <TextBox x:Name="txtPrivateKey" Grid.Row="5" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtPrivateKey_TextChanged"/>
+        <TextBox x:Name="txtPrivateKey" Grid.Row="5" Grid.Column="1" Margin="5" Width="100"  TextChanged="txtPrivateKey_TextChanged"/>
 
         <Label Content="Public Key (encrypt)" Grid.Row="6" Grid.Column="0" Margin="0,5"/>
-        <TextBox x:Name="txtPublicKey" Grid.Row="6" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtPublicKey_TextChanged"/>
+        <TextBox x:Name="txtPublicKey" Grid.Row="6" Grid.Column="1" Margin="5" Width="100"  TextChanged="txtPublicKey_TextChanged"/>
 
         <Button Content="Decrypt" Click="Decrypt_Click" Grid.Row="7" Grid.Column="1" Margin="5"/>
 
         <Label Content="Decrypted Message:" Grid.Row="8" Grid.Column="0" Margin="0,5"/>
-        <TextBox x:Name="txtDecryptedMessage" Grid.Row="8" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtDecryptedMessage_TextChanged"/>
-        
+        <TextBox x:Name="txtDecryptedMessage" Grid.Row="8" Grid.Column="1" Margin="5" Width="100"  TextChanged="txtDecryptedMessage_TextChanged"/>
+
+        <Label Content="Key pair" Grid.Row="9" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtKeyPair" Grid.Row="9" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtKeyPair_TextChanged"/>
+
+        <Label Content="FindKeys" Grid.Row="10" Grid.Column="0" Margin="0,5"/>
+        <Button Content="FindKeys" Click="FindKeys_Click" Grid.Row="10" Grid.Column="1" Margin="5"/>
     </Grid>
 </Window>
 

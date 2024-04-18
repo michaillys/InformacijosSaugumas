@@ -71,6 +71,8 @@ namespace _3Praktikinis
 
             txtPrivateKey.Text = privateKey.ToString();
             txtPublicKey.Text = publicKey.ToString();
+
+
             //WriteToJSON.WriteKeys(p, q, privateKey, publicKey);
 
             
@@ -110,10 +112,24 @@ namespace _3Praktikinis
 
             string message;
             message = ReadFromFile.Read();
+
+
             RSAKeys readKeys = new RSAKeys();
             readKeys = RSAKeys.ReadKeys();
-            int d = readKeys.privateKey;
+            //int d = readKeys.privateKey;
+
+
             int n = readKeys.n;
+            int[] keyPair = new int[2];
+            keyPair = RSAEncryption.FindKeyPair(n);
+
+
+            int p = keyPair[0];
+            int q = keyPair[1];
+            int d = RSAEncryption.GetRSAPrivateKey(p, q);
+
+
+
             string encryptedMessage = txtEncryptedMessage.Text;
             string decryptedMessage = RSAEncryption.RSADecrypt(n, d, encryptedMessage);
             txtDecryptedMessage.Text = decryptedMessage;
@@ -123,6 +139,25 @@ namespace _3Praktikinis
         private void txtDecryptedMessage_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void txtKeyPair_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+
+        }
+
+        private void FindKeys_Click(object sender, RoutedEventArgs e)
+        {
+
+            RSAKeys readKeys = new RSAKeys();
+            readKeys = RSAKeys.ReadKeys();
+            int n = readKeys.n;
+
+            int[] keyPair = new int[2];
+            keyPair = RSAEncryption.FindKeyPair(n);
+
+            txtKeyPair.Text = keyPair[0].ToString() + ", " + keyPair[1].ToString();
         }
     }
 }
