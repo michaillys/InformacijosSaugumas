@@ -1,13 +1,5 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Praktinis2
 {
@@ -16,7 +8,7 @@ namespace Praktinis2
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,13 +17,13 @@ namespace Praktinis2
         SourceSelect sourceSelect = new SourceSelect();
 
         private void BrowseSource_Click(object sender, RoutedEventArgs e)
-        {            
-            sourceSelect.SelectSource();            
+        {
+            sourceSelect.SelectSource();
             txtSourcePath.Text = sourceSelect.SourcePath;
         }
 
         private void cmbEncryptionMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
+        {
         }
 
         private void BrowseOutput_Click(object sender, RoutedEventArgs e)
@@ -53,13 +45,13 @@ namespace Praktinis2
                 return;
             }
             else
-            {                
+            {
                 AesEncryption aesEncryption = new AesEncryption(cmbEncryptionMode.Text, txtSourcePath.Text, txtOutputFolder.Text, txtEncryptionKey.Text);
                 MessageBox.Show(aesEncryption.Mode);
 
                 aesEncryption.Encrypt();
-            }           
-            
+            }
+
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
@@ -81,7 +73,7 @@ namespace Praktinis2
 
                 aesEncryption.Decrypt();
             }
-            
+
         }
     }
 }

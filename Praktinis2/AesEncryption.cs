@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.IO;
 using System.Security.Cryptography;
-using System.IO;
+using System.Text;
 
 
 namespace Praktinis2
@@ -16,7 +11,7 @@ namespace Praktinis2
         private string SourcePath { get; set; }
         private string OutputPath { get; set; }
 
-        private string KeyName { get; set; }    
+        private string KeyName { get; set; }
 
         private byte[] Key;
         private byte[] IV = Encoding.UTF8.GetBytes("1234567890123456");
@@ -24,9 +19,9 @@ namespace Praktinis2
 
 
 
-       
 
-        
+
+
 
         public AesEncryption(string mode, string sourcePath, string outputPath)
         {
@@ -49,7 +44,7 @@ namespace Praktinis2
 
         public void Encrypt()
         {
-        
+
             using (Aes myAes = Aes.Create())
             {
                 switch (Mode.ToUpper())
@@ -66,17 +61,17 @@ namespace Praktinis2
                     default:
                         myAes.Mode = CipherMode.CBC;
                         break;
-                }   
+                }
 
                 myAes.Key = Key;
                 myAes.IV = IV;
 
                 OutputPath = OutputPath + "\\" + "Encrypted_" + Mode + "_" + KeyName + Path.GetFileName(SourcePath);
 
-                ICryptoTransform encryptor = myAes.CreateEncryptor(myAes.Key, myAes.IV); 
+                ICryptoTransform encryptor = myAes.CreateEncryptor(myAes.Key, myAes.IV);
 
-                
-                
+
+
                 using (FileStream fsInput = new FileStream(SourcePath, FileMode.Open, FileAccess.Read))
                 {
                     using (FileStream fsEncrypted = new FileStream(OutputPath, FileMode.Create, FileAccess.Write))
@@ -135,13 +130,13 @@ namespace Praktinis2
                             {
                                 bytesRead = cs.Read(buffer, 0, buffer.Length);
                                 fsDecrypted.Write(buffer, 0, bytesRead);
-                            } 
+                            }
                             while (bytesRead != 0);
                         }
                     }
                 }
             }
         }
-        
+
     }
 }
