@@ -1,0 +1,55 @@
+﻿<Window x:Class="_3Praktikinis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3Praktikinis"
+        mc:Ignorable="d"
+                Title="RSA Encryption" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Enter prime number p:" Grid.Row="0" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtP" Grid.Row="0" Grid.Column="1" Margin="5" Width="100" TextChanged="txtP_TextChanged" Text="97"/>
+
+        <Label Content="Enter prime number q:" Grid.Row="1" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtQ" Grid.Row="1" Grid.Column="1" Margin="5" Width="100" TextChanged="txtQ_TextChanged" Text="113" />
+
+        <Label Content="Enter plaintext message x:" Grid.Row="2" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtX" Grid.Row="2" Grid.Column="1" Margin="5" Width="100" TextChanged="txtX_TextChanged" Text="HelloWorld!"/>
+
+        <Button Content="Encrypt" Click="Encrypt_Click" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Encrypted Message:" Grid.Row="4" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtEncryptedMessage" Grid.Row="4" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtEncryptedMessage_TextChanged"/>
+
+        <Label Content="Private Key (decrypt)" Grid.Row="5" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtPrivateKey" Grid.Row="5" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtPrivateKey_TextChanged"/>
+
+        <Label Content="Public Key (encrypt)" Grid.Row="6" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtPublicKey" Grid.Row="6" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtPublicKey_TextChanged"/>
+
+        <Button Content="Decrypt" Click="Decrypt_Click" Grid.Row="7" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Decrypted Message:" Grid.Row="8" Grid.Column="0" Margin="0,5"/>
+        <TextBox x:Name="txtDecryptedMessage" Grid.Row="8" Grid.Column="1" Margin="5" Width="100" IsReadOnly="True" TextChanged="txtDecryptedMessage_TextChanged"/>
+        
+    </Grid>
+</Window>
+
