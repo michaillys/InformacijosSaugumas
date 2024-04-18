@@ -132,5 +132,21 @@ namespace _3Praktikinis
             return a;
         }       
 
+        
+        public static int[] FindKeyPair(int n)
+        {
+            int[] keyPair = new int[2];
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    keyPair[0] = i;
+                    keyPair[1] = n / i;
+                    break;
+                }
+            }
+            return keyPair;
+        }
+
     }
 }
